@@ -26,6 +26,7 @@
         <td>{{$user->id}}</td>
         <td>{{$user->name}}</td>
         <td>{{$user->email}}</td>
+        <td>{{$variable3}}</td>
       </tr>
 
       @endforeach

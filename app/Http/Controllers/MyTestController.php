@@ -35,7 +35,8 @@ class MyTestController extends Controller
 
     public function testusersFx(){
         $allUsers = Test::all();
-        //$allUsers = Test::where('email','jane.smith@example.com')->get();
+        // $allUsers = Test::where('email','jane.smith@example.com')->get();
+        $allUsers = Test::where('id','>',5)->get();
         $variable2="HEADINF";
         $variable3='DATE'.date('m/y/d');
      return view('myview',compact('allUsers','variable2','variable3'));
