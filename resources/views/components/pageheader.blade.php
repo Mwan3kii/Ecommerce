@@ -34,26 +34,31 @@
                     <span class="fas fa-user" aria-hidden="true"></span> 
                     <!-- <img src="images/p1.jpg" alt="Profile Picture" class="profile-image">    -->
                 </div>
-                <form action="/login" method="POST">
+                @auth
+                <p>Welcome back, {{ auth()->user()->name }}!</p>
+                <form action="/logout" method="POST">
+                @csrf
+                    <button class="logout-btn">
+                        <div class="fas fa-sign out"></div>
+                            <span>Logout</span>
+                    </button>
+                </form>
+                @else
+                <form action="/login" method="GET">
                     @csrf
                     <button class="nav-btn" type="submit">
                         <div class="fas fa-user user"></div>
                         <span>Login</span>
                     </button>
                 </form>
-                <form action="/register" method="GET">
+                @endauth
+                {{-- <form action="/register" method="GET">
                     @csrf
                     <button class="nav-btn" type="submit">
                         <div class="fas fa-user user"></div>
                         <span>Signup</span>
                     </button>
-                </form>
-                {{-- <a href="./auth/logout.php">
-                    <button class="logout-btn">
-                        <div class="fas fa-sign out"></div>
-                        <span>Logout</span>
-                    </button>
-                </a> --}}
+                </form> --}}
                 <button class="cart-btn" id="cartButton">
                         <div class="fas fa-shopping-bag"></div>
                         <span>Cart</span>

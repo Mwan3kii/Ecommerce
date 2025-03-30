@@ -27,7 +27,7 @@
                         <input type="password" name="password" placeholder="Password" required>
                         <span class="fas fa-unlock-alt" aria-hidden="true"></span>
                     </div>
-                    <p>Already have an account?<span>Login here</span></p>
+                    <p>Already have an account?<a href="/login">Login</a></p>
                     <div style="text-align: center; margin-top: 1.5em;">
                         <button class="auth-button" type="submit">
                             Sign up

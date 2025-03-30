@@ -16,16 +16,16 @@
                 <form class="auth-form" action="/login" method="POST">
                     @csrf
                     <div class="auth-span">
-                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="email" name="loginemail" placeholder="Email" required>
                         <span class="fas fa-envelope" aria-hidden="true"></span>
                     </div>
                     <div class="auth-span">
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="loginpassword" placeholder="Password" required>
                         <span class="fas fa-unlock-alt" aria-hidden="true"></span>
                     </div>
-                    <p>Dont have an account?<a href="signup.html"><span>Sign Up here</span></a></p>
+                    <p>Dont have an account?<a href="/register">Sign Up here</a></p>
                     <div style="text-align: center; margin-top: 2.5em;">
-                        <button class="auth-button">
+                        <button class="auth-button" type="submit">
                             Login
                         </button>
                     </div>
