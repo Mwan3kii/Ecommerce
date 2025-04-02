@@ -22,7 +22,9 @@
                     <a href="products.php">
                         <li class="nav-item">PRODUCTS</li>
                     </a>
-                    <a href="./create-product.html"><li class="nav-item">ADD PRODUCT</li></a>
+                    
+                    <a href="/create_product"><li class="nav-item">ADD PRODUCT</li></a>
+                    
                     <li class="search-bar">
                         <span class="fas fa-search me-2" aria-hidden="true"></span>
                     </li>

@@ -5,7 +5,7 @@ use Livewire\Volt\Volt;
 
 use App\Http\Controllers\MyTestController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
@@ -40,6 +40,12 @@ Route::get('/login', function () {
 Route::get('/logout', function () {
     return view('livewire.auth.login');
 });
+
+Route::get('/create_product', function () {
+    return view('create_product');
+});
+
+Route::post('/create_product', [ProductController::class, 'createProduct']);
 
 
 require __DIR__.'/auth.php';
