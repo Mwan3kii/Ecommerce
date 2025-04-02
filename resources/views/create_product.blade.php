@@ -12,7 +12,7 @@
     <section class="prod-section">
         <div class="main-prod">
             <div class="prod-container">
-                <form action="/create_product" method="POST" class="prod-form" enctype="multipart/form-data">
+                <form action="/create-product" method="POST" class="prod-form" enctype="multipart/form-data">
                     @csrf
                     <div class="prod-div">
                         <input type="text" name="productname" placeholder="Product name" required>

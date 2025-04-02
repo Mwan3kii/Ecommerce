@@ -39,12 +39,13 @@ class ProductController extends Controller
             'image' => $request->file('image')->store('images', 'public'),
         ]);
 
-        return redirect('/landing-page')->with('success', 'Product created successfully!');
+        return redirect('/display-products')->with('success', 'Product created successfully!');
     }
 
     public function showProducts()
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        // return view('display_products', compact('products'));
+        return view('display_products', ['products' => $products]);
     }
 }

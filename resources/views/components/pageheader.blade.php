@@ -19,11 +19,11 @@
                 <ul class="nav-ul">
                     <li class="nav-item">HOME</li>
                     <li class="nav-item">ABOUT</li>
-                    <a href="products.php">
+                    <a href="/display-products">
                         <li class="nav-item">PRODUCTS</li>
                     </a>
                     
-                    <a href="/create_product"><li class="nav-item">ADD PRODUCT</li></a>
+                    <a href="/create-product"><li class="nav-item">ADD PRODUCT</li></a>
                     
                     <li class="search-bar">
                         <span class="fas fa-search me-2" aria-hidden="true"></span>

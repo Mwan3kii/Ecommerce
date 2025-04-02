@@ -41,11 +41,17 @@ Route::get('/logout', function () {
     return view('livewire.auth.login');
 });
 
-Route::get('/create_product', function () {
+Route::get('/create-product', function () {
     return view('create_product');
 });
 
-Route::post('/create_product', [ProductController::class, 'createProduct']);
+Route::get('/display-products', function () {
+    return view('display_products');
+});
+
+Route::get('/display-products', [ProductController::class, 'showProducts']);
+
+Route::post('/create-product', [ProductController::class, 'createProduct']);
 
 
 require __DIR__.'/auth.php';
