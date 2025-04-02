@@ -48,4 +48,12 @@ class ProductController extends Controller
         // return view('display_products', compact('products'));
         return view('display_products', ['products' => $products]);
     }
+
+    public function showSingleProduct($id)
+    {
+        // $product = Product::findOrFail($id);
+        // $product = Product::where('id', $id)->firstOrFail();
+        $product = Product::where('id', $id)->get();
+        return view('single_product', ['product' => $product]);
+    }
 }

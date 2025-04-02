@@ -50,6 +50,7 @@ Route::get('/display-products', function () {
 });
 
 Route::get('/display-products', [ProductController::class, 'showProducts']);
+Route::get('/single-product/{id}', [ProductController::class, 'showSingleProduct']);
 
 Route::post('/create-product', [ProductController::class, 'createProduct']);
 

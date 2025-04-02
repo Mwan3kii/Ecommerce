@@ -16,8 +16,9 @@
                     @foreach ($products as $product)
                     <div>
                         <div class="product-image">
-                            {{-- <a href='/single-productid={{$product['id']}}'> --}}
-                            <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image">
+                            <a href='/single-product/{{$product['id']}}'>
+                                <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image">
+                            </a>
                             <button class="cart-button"> Add to cart </button>
                         </div>
                         <h4>{{$product['name']}}</h4>
