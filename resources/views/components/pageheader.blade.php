@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="./script.js" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
 <body>
     <header class="header-top">
@@ -19,7 +19,7 @@
                 <ul class="nav-ul">
                     <li class="nav-item">HOME</li>
                     <li class="nav-item">ABOUT</li>
-                    <a href="/display-products">
+                    <a href="/products">
                         <li class="nav-item">PRODUCTS</li>
                     </a>
                     
@@ -61,10 +61,49 @@
                         <span>Signup</span>
                     </button>
                 </form> --}}
-                <button class="cart-btn" id="cartButton">
-                        <div class="fas fa-shopping-bag"></div>
-                        <span>Cart</span>
-                </button>
+                {{-- <button class="cart-btn" id="cartButton">
+                    <div class="fas fa-shopping-bag"></div>
+                    <span>Cart</span>
+                </button> --}}
+                <form action="/cart" method="GET">
+                    @csrf
+                    <button class="cart-btn" >
+                            <div class="fas fa-shopping-bag"></div>
+                            <span>Cart</span>
+                    </button>
+                </form>
+                {{-- <div id="popupCart" style="display: none;">
+                    <div class="cart-section">
+                        <div class="cart-container">
+                        @foreach ($cart as $cartItem)
+                            <div style="display: flex; justify-content: space-between;">
+                                <h2>CART</h2>
+                                <button type="button" class="cart-close">×</button>
+                            </div>
+                            <div class="cart-list">
+                                <ul>
+                                    <li>
+                                        <h4>{{$cartItem['name']}}</h4>
+                                        <div>
+                                            <input class="cart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text"
+                                                pattern="[0-9]*" value="1" autocomplete="off">
+                                            <button type="button" class="remove-cart">×</button>
+                                        </div>
+                                        <span class="cart-price">Ksh{{$cartItem['price']}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div class="cart-total">Subtotal: $999.98 USD</div>
+                                    <a href="checkout.html">
+                                        <button class="cart-checkout" type="submit">Check Out</button>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                        </div>
+                    </div>
+                </div> --}}
             </div>
-        </div>
-    </header>
+    </div>
+</header>

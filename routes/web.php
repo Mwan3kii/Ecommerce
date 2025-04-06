@@ -45,14 +45,22 @@ Route::get('/create-product', function () {
     return view('create_product');
 });
 
-Route::get('/display-products', function () {
+Route::get('/products', function () {
     return view('display_products');
 });
 
-Route::get('/display-products', [ProductController::class, 'showProducts']);
+Route::get('/products', [ProductController::class, 'showProducts']);
 Route::get('/single-product/{id}', [ProductController::class, 'showSingleProduct']);
 
 Route::post('/create-product', [ProductController::class, 'createProduct']);
+
+// Route::get('/cart', [ProductController::class, 'showCart']);
+
+Route::get('/add-to-cart/{id}', function () {
+    return view('components.cart');
+});
+
+// Route::get('/add-to-cart/{id}', [ProductController::class, 'addToCart']);
 
 
 require __DIR__.'/auth.php';
