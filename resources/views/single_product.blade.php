@@ -13,9 +13,11 @@
         <div class="single-container">
             <div class="single-image">
                 <img src="{{ asset('storage/' . $prod['image']) }}" alt="single product">
-                <button class="single-btn">
-                    Add to cart
-                </button>
+                <a href="/add-to-cart/{{$prod['id']}}">
+                    <button class="single-btn">
+                        Add to cart
+                    </button>
+                </a>
             </div>
             <div class="product-description">
                 <h2>{{$prod['name']}}</h2>

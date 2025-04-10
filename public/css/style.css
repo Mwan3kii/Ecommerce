@@ -15,7 +15,7 @@
 
 .header-container {
     display: flex;
-    margin-left: 90px;
+    margin-left: 60px;
     margin-right: auto;
     margin-top: 25px;
     justify-content: space-between;
@@ -38,6 +38,7 @@
     color: #2b2d42;
     font-size: 13px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .nav-item:hover {
@@ -80,6 +81,7 @@
 }
 
 .cart-btn {
+    height: 51px;
     padding: 12px 18px;
     background-color: #ef233c;
     color: white;
@@ -88,9 +90,7 @@
     font-size: 15px;
     font-weight: 700;
     border-radius: 3px;
-    margin-left: 0px;
-    flex: none;
-    width: auto;
+    
 }
 
 .logout-btn {
@@ -279,7 +279,6 @@
 
 .offers-section {
     background-color: #f7f6f6;
-    height: 150vh;
 }
 
 .offers-container {
@@ -328,13 +327,13 @@
 }
 
 .footer-div {
-    height: 85vh;
+    height: 79vh;
     margin-left: 90px;
     color: #fff;
 }
 
 .footer-title {
-    font-size: 40px;
+    font-size: 35px;
     color: #fff;
     font-weight: 700;
     line-height: 50px;
@@ -349,7 +348,7 @@
 
 .footer-info li {
     list-style: none;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 100;
     margin-bottom: 10px;
     color: #888;
@@ -367,7 +366,7 @@
 }
 
 .footer-container h6 {
-    font-size: 25px;
+    font-size: 23px;
     color: #fff;
     line-height: 28px;
     font-weight: 600;
@@ -386,7 +385,7 @@
 }
 
 .footer-div p {
-    font-size: 18px;
+    font-size: 15px;
     color: #888;
     line-height: 28px;
     margin-top: 20px;
@@ -400,7 +399,7 @@
 }
 
 .social-btn {
-    padding: 7px 20px;
+    padding: 7px 13px;
     background-color: #ef233c;
     color: white;
     border-color: #ef233c;
@@ -769,14 +768,14 @@ a {
     list-style: none;
     border: none;
     box-shadow: none;
-    padding: 1em;
-    margin: 5px 0 20px;
+    margin: 3px 0px 3px 0px;
     background-color: #f5f0f0;
     border-radius: 4px;
 }
 
 .cart-list ul {
     width: 100%;
+    margin-top: 5px;
 }
 
 .cart-list li {
@@ -784,12 +783,13 @@ a {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-top: 7px;
 }
 
 .cart-list h4 {
-    font-size: 15px;
+    font-size: 13px;
     color: #060500;
+    width: 140px;
 }
 
 .clear-cart {
@@ -820,9 +820,10 @@ a {
 }
 
 .cart-price {
-    font-size: 16px;
+    font-size: 14px;
     color: #060500;
-    font-weight: 900;
+    font-weight: 600;
+    margin-right: 20px;
 }
 
 .cart-total {
@@ -838,15 +839,15 @@ a {
 }
 
 .checkout-section {
-    margin-left: 90px;
-    height: 160vh;
+    margin-left: 70px;
+    height: 150vh;
     margin-top: 50px;
 }
 
 .checkout-section h3 {
-    font-size: 32px;
+    font-size: 25px;
     color: #2b2d42;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .checkout-table {
@@ -854,19 +855,24 @@ a {
     margin-top: 30px;
 }
 
+.checkout-table .tbody {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
 .checkout-img {
-    height: 20vh;
-    width: 55%;
+    height: 10vh;
+    width: 50%;
 }
 
 .checkout-row {
-    height: 30px;
+    height: 30px !important;
     overflow: scroll;
 }
 
 .checkout-row td {
     font-weight: 600;
-    font-size: 17px;
+    font-size: 16px;
     color: #2b2d42;
 }
 
@@ -914,7 +920,7 @@ a {
     background-color: #ef233c;
     border-color: #ef233c;
     text-align: center;
-    padding: 15px 45px;
+    padding: 10px 30px;
     border-radius: 4px;
 }
 
@@ -927,7 +933,7 @@ a {
     background-color: #ef233c;
     border-color: #ef233c;
     text-align: center;
-    padding: 15px 50px;
+    padding: 10px 30px;
     border-radius: 4px;
 }
 
@@ -936,8 +942,8 @@ a {
 }
 
 .payment img {
-    width: 40%;
-    height: 15vh;
+    width: 30%;
+    height: 10vh;
 }
 
 .prod-section {

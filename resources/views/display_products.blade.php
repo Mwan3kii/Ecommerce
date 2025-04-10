@@ -1,5 +1,4 @@
 <x-pageheader></x-pageheader>
-{{-- <x-cart></x-cart> --}}
     <section style="height: 90px;"></section>
     <section>
         <div>
@@ -11,6 +10,7 @@
         </div>
     </section>
     <section>
+        @include('cart')
         <div class="products-section">
             <div class="products-div">
                 <div class="products-display">
@@ -20,13 +20,14 @@
                             <a href='/single-product/{{$product['id']}}'>
                                 <img src="{{ asset('storage/' . $product['image']) }}" alt="Product Image">
                             </a>
-                            {{-- <form action="/add-to-cart/{{$product['id']}}" method="GET">
+                            {{-- <form action="/add-to-cart/{{$product['id']}}" method="POST">
                                 @csrf
                                 <button class="cart-button"> Add to cart </button>
                             </form> --}}
                             <a href="/add-to-cart/{{$product['id']}}">
                                 <button class="cart-button"> Add to cart </button>
                             </a>
+                            {{-- <button class="cart-button"> Add to cart </button> --}}
                         </div>
                         <h4>{{$product['name']}}</h4>
                         <span class="price">
@@ -38,7 +39,8 @@
                 </div>
             </div>
         </div>
-    </section>
+        
+    </section>   
 <x-pagefooter></x-pagefooter>
 </body>
 

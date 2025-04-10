@@ -6,6 +6,7 @@ use Livewire\Volt\Volt;
 use App\Http\Controllers\MyTestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -29,6 +30,7 @@ Route::get('/landing-page', function () {
     return view('landing');
 });
 
+// Auth
 Route::get('/register', function () {
     return view('livewire.auth.register');
 });
@@ -41,26 +43,23 @@ Route::get('/logout', function () {
     return view('livewire.auth.login');
 });
 
+// Products
 Route::get('/create-product', function () {
     return view('create_product');
 });
 
-Route::get('/products', function () {
-    return view('display_products');
-});
-
 Route::get('/products', [ProductController::class, 'showProducts']);
 Route::get('/single-product/{id}', [ProductController::class, 'showSingleProduct']);
-
 Route::post('/create-product', [ProductController::class, 'createProduct']);
 
-// Route::get('/cart', [ProductController::class, 'showCart']);
+// Cart
+Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart']);
+Route::get('/remove-cart/{id}', [CartController::class, 'removeFromCart']);
 
-Route::get('/add-to-cart/{id}', function () {
-    return view('components.cart');
+Route::get('/clear-cart', [CartController::class, 'clearCart']);
+Route::get('checkout', function () {
+    return view('checkout');
 });
-
-// Route::get('/add-to-cart/{id}', [ProductController::class, 'addToCart']);
 
 
 require __DIR__.'/auth.php';

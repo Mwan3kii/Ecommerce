@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
 <body>
@@ -17,7 +19,9 @@
             <h1 class="title">SHOPPY<span class="spanh1">Kart</span></h1>
             <div class="navbar-div">
                 <ul class="nav-ul">
-                    <li class="nav-item">HOME</li>
+                    <a href="/landing-page">
+                        <li class="nav-item">HOME</li>
+                    </a>
                     <li class="nav-item">ABOUT</li>
                     <a href="/products">
                         <li class="nav-item">PRODUCTS</li>
@@ -32,12 +36,13 @@
             </div>
             
             <div class="auth-div">
+                @auth
                 <div class="profile">
                     <span class="fas fa-user" aria-hidden="true"></span> 
                     <!-- <img src="images/p1.jpg" alt="Profile Picture" class="profile-image">    -->
                 </div>
-                @auth
-                <p>Welcome back, {{ auth()->user()->name }}!</p>
+                <p>{{ auth()->user()->name }}</p>
+                
                 <form action="/logout" method="POST">
                 @csrf
                     <button class="logout-btn">
@@ -54,56 +59,20 @@
                     </button>
                 </form>
                 @endauth
-                {{-- <form action="/register" method="GET">
-                    @csrf
-                    <button class="nav-btn" type="submit">
-                        <div class="fas fa-user user"></div>
-                        <span>Signup</span>
-                    </button>
-                </form> --}}
-                {{-- <button class="cart-btn" id="cartButton">
+                @auth
+                <button class="cart-btn" id="cartButton">
                     <div class="fas fa-shopping-bag"></div>
                     <span>Cart</span>
-                </button> --}}
-                <form action="/cart" method="GET">
-                    @csrf
-                    <button class="cart-btn" >
-                            <div class="fas fa-shopping-bag"></div>
-                            <span>Cart</span>
+                </button>
+                @else
+                <a href="/login">
+                    <button class="cart-btn">
+                        <div class="fas fa-shopping-bag"></div>
+                        <span>Cart</span>
                     </button>
-                </form>
-                {{-- <div id="popupCart" style="display: none;">
-                    <div class="cart-section">
-                        <div class="cart-container">
-                        @foreach ($cart as $cartItem)
-                            <div style="display: flex; justify-content: space-between;">
-                                <h2>CART</h2>
-                                <button type="button" class="cart-close">×</button>
-                            </div>
-                            <div class="cart-list">
-                                <ul>
-                                    <li>
-                                        <h4>{{$cartItem['name']}}</h4>
-                                        <div>
-                                            <input class="cart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text"
-                                                pattern="[0-9]*" value="1" autocomplete="off">
-                                            <button type="button" class="remove-cart">×</button>
-                                        </div>
-                                        <span class="cart-price">Ksh{{$cartItem['price']}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                                <div style="display: flex; justify-content: space-between;">
-                                    <div class="cart-total">Subtotal: $999.98 USD</div>
-                                    <a href="checkout.html">
-                                        <button class="cart-checkout" type="submit">Check Out</button>
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
-                        </div>
-                    </div>
-                </div> --}}
+                </a>
+                @endauth
+                @include('cart')
             </div>
     </div>
 </header>

@@ -56,32 +56,4 @@ class ProductController extends Controller
         $product = Product::where('id', $id)->get();
         return view('single_product', ['product' => $product]);
     }
-
-    public function showCart()
-    {
-        $cart = Session::get('cart', []);
-        // return view('cart', ['cart' => $cart]);
-        return view('components.cart');
-    }
-
-    public function addToCart($id)
-    {
-        // $product = Product::findOrFail($id);
-        $product = Product::where('id', $id)->get();
-        $cart = Session::get('cart', []);
-
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else {
-            $cart[$id] = [
-                'name' => $product->name,
-                'price' => $product->price,
-                'quantity' => 1,
-            ];
-        }
-
-        Session::put('cart', $cart);
-        return view('components.cart', ['cart' => $cart]);
-        // return redirect('/products')->with('success', 'Product added to cart!');
-    }
 }
