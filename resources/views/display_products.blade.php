@@ -11,6 +11,13 @@
     </section>
     <section>
         @include('cart')
+        @if(session('success'))
+            <div class="message-popup">
+                <div class="icon">&#10003;</div>
+                <span class="message">Success!</span>
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        @endif
         <div class="products-section">
             <div class="products-div">
                 <div class="products-display">
@@ -24,9 +31,17 @@
                                 @csrf
                                 <button class="cart-button"> Add to cart </button>
                             </form> --}}
+                            @auth
                             <a href="/add-to-cart/{{$product['id']}}">
                                 <button class="cart-button"> Add to cart </button>
                             </a>
+                            @else
+                            <a href="/login">
+                                <button class="cart-button"> Add to cart </button>
+                            </a>
+                            @endauth
+                            {{-- <a href="/add-to-cart/{{$product['id']}}">
+                                <button class="cart-button"> Add to cart </button>
                             {{-- <button class="cart-button"> Add to cart </button> --}}
                         </div>
                         <h4>{{$product['name']}}</h4>

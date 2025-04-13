@@ -44,17 +44,17 @@
                 </table>
             </div>
             <div class="cart-total">Total: Ksh</div>
-            <div style="display: flex;">
+            <div style="display: flex; gap: 200px;">
                 <div style="margin-top: 50px; width: 600px;">
                     <h3>Delivery details</h3>
                     <form class="checkout-form">
-                        <div class="checkout-input">
+                        <div>
                             <input type="text" name="fullname" placeholder="Full Name" required>
                         </div>
-                        <div class="checkout-input">
+                        <div>
                             <input type="text" name="phone" placeholder="Mobile Number" required>
                         </div>
-                        <div class="checkout-input">
+                        <div>
                             <input type="text" name="town" placeholder="Town/City" required>
                         </div>
                         <button class="deliver-button">
@@ -62,29 +62,12 @@
                         </button>
                     </form>
                 </div>
-                <div style="margin-top: 50px; width: 650px;">
-                    <h3>Payment</h3>
-                    <span class="payment">
-                        <img src="images/pesapal.png" alt="pesapal logo">
-                    </span>
-                    <form class="checkout-form">
-                        <div class="checkout-input">
-                            <input type="text" name="fullname" placeholder="Card Number" required>
-                        </div>
-                        <div class="checkout-input">
-                            <input type="text" name="phone" placeholder="CVV" required>
-                        </div>
-                        <div class="checkout-input">
-                            <input type="text" name="town" placeholder="Card Holder Name" required>
-                        </div>
-                        <div class="checkout-input">
-                            <input type="text" name="town" placeholder="Valid Thru" required>
-                        </div>
-                        <button class="payment-button">
-                            Make payment
-                        </button>
-                    </form>
-                </div>
+                <a href="/payment"> 
+                    <button class="deliver-button " style="margin-top: 150px; width: 200px; gap: 10px;">
+                        <span>Make payment</span>
+                        <div class="fas fa-arrow-right"></div>
+                    </button>
+                </a>
             </div>
         </div>
         </div>

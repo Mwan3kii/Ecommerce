@@ -1,28 +1,25 @@
 <x-pageheader></x-pageheader>
-
     <section style="height: 90px;"></section>
     <section>
+        @if(session('success'))
+            <div class="message-popup">
+                <div class="icon">&#10003;</div>
+                <span class="message">Success!</span>
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        @endif
         <div>
             <div class="banner-section">
                 <div class="banner-container">
                     <h5 class="banner-h5">Up To 60% Off Now</h5>
                     <h3 class="banner-h3">Season Sale 40%</h3>
                     <p class="banner-p">Final Clearance: Take 20% off ‘Sale Must-Haves'</p>
-                    @auth
                     <a href="/products">
                         <button class="shoping-btn">
                             Start shoping
                             <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
                         </button>
                     </a>
-                    @else
-                    <a href="/login">
-                        <button class="shoping-btn">
-                            Start shoping
-                            <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
-                        </button>
-                    </a>
-                    @endauth
                 </div>
             </div>
         </div>
@@ -38,43 +35,26 @@
             <div class="shop-display">
                 <div class="shoping-container1">
                     <h2>Fall Summer clothes</h2>
-                    @auth
                     <a href="/products">
                         <button class="shoping-btn">
                             Start shoping
                             <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
                         </button>
                     </a>
-                    @else
-                    <a href="/login">
-                        <button class="shoping-btn">
-                            Start shoping
-                            <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
-                        </button>
-                    </a>
-                    @endauth
                 </div>
                 <div class="shoping-container2">
                     <h2>Weekend bags</h2>
-                    @auth
                     <a href="/products">
                         <button class="shoping-btn">
                             Start shoping
                             <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
                         </button>
                     </a>
-                    @else
-                    <a href="/login">
-                        <button class="shoping-btn">
-                            Start shoping
-                            <i class="fas fa-arrow-right ms-lg-3 ms-2"></i>
-                        </button>
-                    </a>
-                    @endauth
                 </div>
             </div>
         </div>
     </section>
+    
     <section class="offers-section">
         <div class="offers-container">
             <h3 class="deals-title">Deals Of The Day</h3>

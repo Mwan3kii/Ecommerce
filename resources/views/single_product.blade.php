@@ -9,15 +9,30 @@
         </div>
     </section>
     <section>
+        @if(session('success'))
+            <div class="message-popup">
+                <div class="icon">&#10003;</div>
+                <span class="message">Success!</span>
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        @endif
         @foreach ($product as $prod)
         <div class="single-container">
             <div class="single-image">
                 <img src="{{ asset('storage/' . $prod['image']) }}" alt="single product">
+                @auth
                 <a href="/add-to-cart/{{$prod['id']}}">
                     <button class="single-btn">
                         Add to cart
                     </button>
                 </a>
+                @else
+                <a href="/login">
+                    <button class="single-btn">
+                        Add to cart
+                    </button>
+                </a>
+                @endauth
             </div>
             <div class="product-description">
                 <h2>{{$prod['name']}}</h2>

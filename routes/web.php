@@ -61,5 +61,9 @@ Route::get('checkout', function () {
     return view('checkout');
 });
 
+Route::get('/payment' , function () {
+    return view('payment');
+});
+
 
 require __DIR__.'/auth.php';

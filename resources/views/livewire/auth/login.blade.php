@@ -33,16 +33,6 @@
             </div>
         </div>
     </section>
-    <div class="message-popup">
-        <div class="message-container">
-            <div class="error-heading">
-                <span class="close-btn" onclick="closePopup()">&times;</span>
-            </div>
-            <div class="message-content">
-                <p id="errorMessage">Invalid username or password!</p>
-            </div>
-        </div>
-    </div>
     <x-pagefooter></x-pagefooter>
 </body>
 
