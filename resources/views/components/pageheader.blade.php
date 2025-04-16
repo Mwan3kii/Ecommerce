@@ -22,17 +22,21 @@
                     <a href="/landing-page">
                         <li class="nav-item">HOME</li>
                     </a>
-                    <li class="nav-item">ABOUT</li>
                     <a href="/products">
                         <li class="nav-item">PRODUCTS</li>
                     </a>
                     @auth
                         @if (auth()->user()->isAdmin())
-                            <a href="/create-product"><li class="nav-item">ADD PRODUCT</li></a>
+                            <a href="/create-product"><li class="nav-item">Add product</li></a>
+                            <a href="/admin-panel"><li class="nav-item">Admin panel</li></a>
                         @endif
                     @endauth
-                    <li class="search-bar">
-                        <span class="fas fa-search me-2" aria-hidden="true"></span>
+                    <li class="search-bar nav-item">
+                        <form action="/search" method="GET" class="search-form">
+                            @csrf
+                            <input type="text" name="search" placeholder="Search">
+                            <button type="submit" class="search-button"><span class="fas fa-search me-2"></span></button>
+                        </form>
                     </li>
                 </ul>
             </div>

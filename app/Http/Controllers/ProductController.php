@@ -56,4 +56,56 @@ class ProductController extends Controller
         $product = Product::where('id', $id)->get();
         return view('single_product', ['product' => $product]);
     }
+
+    public function adminProducts()
+    {
+        $products = Product::all();
+        // return view('display_products', compact('products'));
+        return view('admin', ['products' => $products]);
+    }
+
+    public function showProductDetails($id)
+    {
+        $product = Product::where('id', $id)->first();
+        return view('product_details', ['product' => $product]);
+    }
+
+    public function updateProduct(Request $request, $id)
+    {
+        $request->validate([
+            'productname' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle the image upload and post creation logic here
+
+        Product::where('id', $id)->update([
+            'name' => $request->productname,
+            'description' => $request->description,
+            'price' => $request->price,
+            // Handle image update logic here
+            'image' => $request->hasFile('image') ? $request->file('image')->store('images', 'public') : null,
+        ]);
+
+        return redirect('/single-product/' . $id)->with('success', 'Product updated successfully!');
+    }
+
+    public function deleteProduct($id)
+    {
+        $product = Product::where('id', $id)->first();
+        $product->delete();
+        return redirect()->back()->with('success', 'Product deleted successfully!');
+    }
+
+    public function searchProducts(Request $request)
+    {
+        $search = $request->input('search');
+        // $products = Product::where('name', 'LIKE', '%' . $search . '%')->get();
+        $products = Product::when($search, function ($query, $search) {
+            $query->where('name', 'like', "%{$search}%");
+        })->paginate(10);
+        return view('display_products', ['products' => $products]);
+    }
 }

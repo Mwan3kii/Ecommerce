@@ -21,7 +21,7 @@
         <div class="products-section">
             <div class="products-div">
                 <div class="products-display">
-                    @foreach ($products as $product)
+                    @forelse ($products as $product)
                     <div>
                         <div class="product-image">
                             <a href='/single-product/{{$product['id']}}'>
@@ -50,11 +50,12 @@
                             Ksh{{$product['price']}}
                         </span>
                     </div>
-                    @endforeach
+                    @empty
+                        <h4>No products found</h4>
+                    @endforelse
                 </div>
             </div>
         </div>
-        
     </section>   
 <x-pagefooter></x-pagefooter>
 </body>
