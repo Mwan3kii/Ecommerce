@@ -31,6 +31,7 @@
                         <td>
                             <div style="display: flex; gap: 10px;">
                                 <a href="/product-detail/{{$product['id']}}" type="button" class="admin-button">Edit</a>
+                                <a href="/orders" type="button" class="admin-button">order</a>
                                 <form action="/delete-product/{{ $product['id'] }}" method="POST">
                                     @csrf
                                     @method('DELETE')

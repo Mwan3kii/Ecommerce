@@ -10,6 +10,13 @@
         </div>
     </section>
     <section>
+        @if(session('success'))
+            <div class="message-popup">
+                <div class="icon">&#10003;</div>
+                <span class="message">Success!</span>
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        @endif
         <div class="checkout-section">
             <h3>Checkout</h3>
             <div style="max-height: 400px; overflow-y: auto;">
@@ -46,28 +53,30 @@
             <div class="cart-total">Total: Ksh</div>
             <div style="display: flex; gap: 200px;">
                 <div style="margin-top: 50px; width: 600px;">
-                    <h3>Delivery details</h3>
-                    <form class="checkout-form">
+                    <h3>Place an Order: Cash on delivery</h3>
+                    <form action="/order" method="POST" class="checkout-form" enctype="multipart/form-data">
+                        @csrf
                         <div>
-                            <input type="text" name="fullname" placeholder="Full Name" required>
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div>
+                            <input type="text" name="address" placeholder="Address" required>
                         </div>
                         <div>
                             <input type="text" name="phone" placeholder="Mobile Number" required>
                         </div>
                         <div>
-                            <input type="text" name="town" placeholder="Town/City" required>
-                        </div>
-                        <button class="deliver-button">
-                            Deliver To This Address
+                        <button class="deliver-button" type="submit">
+                            Order
                         </button>
                     </form>
                 </div>
-                <a href="/payment"> 
+                {{-- <a href="/payment"> 
                     <button class="deliver-button " style="margin-top: 150px; width: 200px; gap: 10px;">
                         <span>Make payment</span>
                         <div class="fas fa-arrow-right"></div>
                     </button>
-                </a>
+                </a> --}}
             </div>
         </div>
         </div>

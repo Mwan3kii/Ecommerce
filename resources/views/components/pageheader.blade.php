@@ -65,19 +65,10 @@
                     </button>
                 </form>
                 @endauth
-                @auth
                 <button class="cart-btn" id="cartButton">
                     <div class="fas fa-shopping-bag"></div>
                     <span>Cart</span>
                 </button>
-                @else
-                <a href="/login">
-                    <button class="cart-btn">
-                        <div class="fas fa-shopping-bag"></div>
-                        <span>Cart</span>
-                    </button>
-                </a>
-                @endauth
                 @include('cart')
             </div>
     </div>
