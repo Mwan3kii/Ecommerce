@@ -76,6 +76,6 @@ Route::get('/search', [ProductController::class, 'searchProducts']);
 // Orders
 Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/orders', [OrderController::class, 'showOrders']);
-Route::get('/order/{id}', [OrderController::class, 'show']);
+Route::get('/order/{id}', [OrderController::class, 'orderDetails']);
 
 require __DIR__.'/auth.php';

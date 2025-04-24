@@ -37,7 +37,7 @@
                         <td>{{$order['status']}}</td>
                         <td>{{$order['delivery_date']}}</td>
                         <td>
-                            <a href="/order/{id}" type="button" class="admin-button">Details</a>
+                            <a href="/order/{{$order['id']}}" type="button" class="admin-button">Details</a>
                         </td>
                     </tr>
                 @endforeach

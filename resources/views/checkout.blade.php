@@ -36,8 +36,7 @@
                                 <tr> 
                                     <td><img src="{{ asset('storage/' . $item['image']) }}" class="checkout-img"></td>
                                     <td>{{$item['name']}}</td>
-                                    <td><input class="cart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text"
-                                            pattern="[0-9]*" value="1" autocomplete="off"></td>
+                                    <td><input class="cart-quantity" name="quantity" type="text" value="1"></td>
                                     <td>Ksh{{$item['price']}}</td>
                                     <td><a href="/remove-cart/{{$id}}"><button type="button" class="remove-cart">×</button></a></td>
                                 </tr>
@@ -50,7 +49,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="cart-total">Total: Ksh</div>
+            <div class="cart-total">Total: Ksh {{ session('total') }}</div>
             <div style="display: flex; gap: 200px;">
                 <div style="margin-top: 50px; width: 600px;">
                     <h3>Place an Order: Cash on delivery</h3>

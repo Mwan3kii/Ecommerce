@@ -1,4 +1,3 @@
-{{-- <x-pageheader></x-pageheader> --}}
 <div id="popupCart" style="display: none;">
     <div class="cart-section">
         <div class="cart-container">
@@ -16,8 +15,7 @@
                             <li>
                                 <h4>{{$item['name']}}</h4>
                                 <div>
-                                    <input class="cart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text"
-                                        pattern="[0-9]*" value="1" autocomplete="off">
+                                    <input class="cart-quantity" name="quantity" type="number" min="1" value="1">
                                     <a href="/remove-cart/{{$id}}">
                                         <button type="submit" class="remove-cart">×</button>
                                     </a>
@@ -28,7 +26,7 @@
                     </ul>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
-                    <div class="cart-total">Subtotal: {{$item['price'] * $item['quantity']}}</div>
+                    <div class="cart-total">Subtotal: {{ session('total') }}</div>
                     <a href="/checkout">
                         <button class="cart-checkout" type="submit">Check Out</button>
                     </a>

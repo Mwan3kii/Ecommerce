@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function addToCart($id)
+    public function addToCart($id, Request $request)
     {
         if (!Auth::check()) {
             return redirect()->route('login');
@@ -20,12 +20,25 @@ class CartController extends Controller
         // dd($product);
         $product = Product::find($id);
         $cart = session()->get('cart', []);
-        $cart[$id] = [
-            "name" => $product->name,
-            "quantity" => 1,
-            "price" => $product->price,
-            "image" => $product->image,
-        ];
+
+        $quantity = $request->input('quantity', 1);
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] += $quantity;
+        } else {
+            $cart[$id] = [
+                "name" => $product->name,
+                "quantity" => $quantity,
+                "price" => $product->price,
+                "image" => $product->image,
+            ];
+        }
+        // Calculate the total price
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+        session()->put('total', $total);
+
         session()->put('cart', $cart);
         return back()->with('success', 'Product added to cart!');
     }
@@ -37,6 +50,14 @@ class CartController extends Controller
             unset($cart[$id]);
             session()->put('cart', $cart);
         }
+
+        // Calculate the total price
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+        session()->put('total', $total);
+
         return redirect()->back()->with('success', 'Product removed successfully!');
     }
 
