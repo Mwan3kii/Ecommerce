@@ -17,30 +17,13 @@
     <header class="header-top">
         <div class="header-container">
             <h1 class="title">SHOPPY<span class="spanh1">Kart</span></h1>
-            <div class="navbar-div">
-                <ul class="nav-ul">
-                    <a href="/landing-page">
-                        <li class="nav-item">HOME</li>
-                    </a>
-                    <a href="/products">
-                        <li class="nav-item">PRODUCTS</li>
-                    </a>
-                    @auth
-                        @if (auth()->user()->isAdmin())
-                            <a href="/create-product"><li class="nav-item">Add product</li></a>
-                            <a href="/admin-panel"><li class="nav-item">Admin panel</li></a>
-                        @endif
-                    @endauth
-                    <li class="search-bar nav-item">
-                        <form action="/search" method="GET" class="search-form">
-                            @csrf
-                            <input type="text" name="search" placeholder="Search">
-                            <button type="submit" class="search-button"><span class="fas fa-search me-2"></span></button>
-                        </form>
-                    </li>
-                </ul>
+            <div class="search-bar">
+                <form action="/search" method="GET" class="search-form">
+                    @csrf
+                    <input type="text" name="search" placeholder="Search">
+                    <button type="submit" class="search-button"><span class="fas fa-search me-2"></span></button>
+                </form>
             </div>
-            
             <div class="auth-div">
                 @auth
                 <div class="profile">
@@ -71,5 +54,28 @@
                 </button>
                 @include('cart')
             </div>
+        </div>
+        <div>
+            <div class="navbar-div">
+                <ul class="nav-ul">
+                    <a href="/landing-page">
+                        <li class="nav-item">HOME</li>
+                    </a>
+                    <a href="/products">
+                        <li class="nav-item">PRODUCTS</li>
+                    </a>
+                    <a href="/contact">
+                        <li class="nav-item">CONTACT</li>
+                    </a>
+                    @auth
+                        @if (auth()->user()->isAdmin())
+                            <a href="/create-product"><li class="nav-item">ADD PRODUCT</li></a>
+                            <a href="/admin-panel"><li class="nav-item">ADMIN PANEL</li></a>
+                            <a href="/orders"><li class="nav-item">ORDERS</li></a>
+                        @endif
+                    @endauth
+                </ul>
+            </div>
+        </div>
     </div>
 </header>

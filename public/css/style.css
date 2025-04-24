@@ -16,18 +16,20 @@
 .header-container {
     display: flex;
     margin-left: 50px;
-    margin-right: auto;
     margin-top: 25px;
     justify-content: space-between;
 }
 
 .navbar-div {
     margin-right: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-ul {
     display: flex;
     flex-basis: auto;
+    gap: 30px;
 }
 
 .nav-item {
@@ -828,7 +830,7 @@ a {
 
 .checkout-section {
     margin-left: 70px;
-    height: 150vh;
+    height: 130vh;
     margin-top: 50px;
 }
 
@@ -1204,6 +1206,7 @@ a {
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #ccc;
+    width: 150%;
 }
 
 .search-form input {
@@ -1212,7 +1215,8 @@ a {
     border: none;
     outline: none;
     font-size: 14px;
-    width: 110px;
+    width: 100%;
+    height: 30px;
 }
 
 .search-button {
@@ -1232,4 +1236,11 @@ a {
 
 .search-bar {
     list-style: none;
+    padding: 10px;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: #2b2d42;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 150px;
 }

@@ -1,5 +1,5 @@
 <x-pageheader></x-pageheader>
-<section style="height: 90px;"></section>
+<section style="height: 100px;"></section>
 <section>
     @if(session('success'))
             <div class="message-popup">
@@ -20,7 +20,6 @@
                     <th>Total</th>
                     <th>Paid</th>
                     <th>Status</th>
-                    <th>Delivery date</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -35,7 +34,7 @@
                         <td>Ksh{{$order['total']}}</td>
                         <td>{{$order['is_paid']}}</td>
                         <td>{{$order['status']}}</td>
-                        <td>{{$order['delivery_date']}}</td>
+                        {{-- <td>{{$order['delivery_date']}}</td> --}}
                         <td>
                             <a href="/order/{{$order['id']}}" type="button" class="admin-button">Details</a>
                         </td>

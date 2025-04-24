@@ -1,5 +1,5 @@
 <x-pageheader></x-pageheader>
-<section style="height: 90px;"></section>
+<section style="height: 100px;"></section>
 <section>
     @if(session('success'))
             <div class="message-popup">
@@ -31,7 +31,7 @@
                         <td>
                             <div style="display: flex; gap: 10px;">
                                 <a href="/product-detail/{{$product['id']}}" type="button" class="admin-button">Edit</a>
-                                <a href="/orders" type="button" class="admin-button">order</a>
+                                
                                 <form action="/delete-product/{{ $product['id'] }}" method="POST">
                                     @csrf
                                     @method('DELETE')
