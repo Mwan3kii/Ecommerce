@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
@@ -77,5 +78,9 @@ Route::get('/search', [ProductController::class, 'searchProducts']);
 Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/orders', [OrderController::class, 'showOrders']);
 Route::get('/order/{id}', [OrderController::class, 'orderDetails']);
+
+// Contact
+Route::post('/contact', [ContactController::class, 'submitContactForm']);
+Route::get('/contact', [ContactController::class, 'showContactForm']);
 
 require __DIR__.'/auth.php';

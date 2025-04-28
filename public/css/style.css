@@ -1244,3 +1244,87 @@ a {
     text-decoration: none;
     margin-right: 150px;
 }
+
+.contact-title {
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.contact-title h3 {
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #ef233c
+}
+
+.contact-title p {
+    font-size: 19px;
+    color: #2b2d42;
+    font-weight: 700;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.contact-info {
+    display: flex;
+    gap: 250px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+.contact-div h6 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.contact-div p {
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #888;
+    line-height: 28px;
+}
+
+.contact-div span {
+    color: #ef233c;
+}
+
+.contact-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-input {
+    width: 90%;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: inherit;
+    padding: 16px 26px;
+    border: 1px solid #f7f6f6;
+    outline: none;
+    margin-bottom: 16px;
+    border-radius: var(--border-radius);
+    background: #f7f6f6;
+}
+
+.contact-button {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: #ef233c;
+    border-color: #ef233c;
+    text-align: center;
+    padding: 15px 45px;
+    border-radius: 4px;
+}
