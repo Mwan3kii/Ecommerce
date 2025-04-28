@@ -79,6 +79,7 @@ Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/orders', [OrderController::class, 'showOrders']);
 Route::get('/order/{id}', [OrderController::class, 'orderDetails']);
 Route::put('/order/{order}/status', [OrderController::class, 'updateStatus']);
+Route::put('/order/{order}/mark-paid', [OrderController::class, 'markPaid']);
 
 // Contact
 Route::post('/contact', [ContactController::class, 'submitContactForm']);
