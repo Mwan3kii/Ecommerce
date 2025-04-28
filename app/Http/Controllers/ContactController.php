@@ -22,7 +22,7 @@ class ContactController extends Controller
             'message' => 'required|string|max:500',
         ]);
         
-        Http::post('https://formspree.io/f/xnnqzzyn', $validatedData);
+        Http::post('https://formspree.io/f/movdjaqw', $validatedData);
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 }
