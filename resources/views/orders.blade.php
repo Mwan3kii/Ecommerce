@@ -33,7 +33,18 @@
                         <td>{{$order['phone_number']}}</td>
                         <td>Ksh{{$order['total']}}</td>
                         <td>{{$order['is_paid']}}</td>
-                        <td>{{$order['status']}}</td>
+                        {{-- <td>{{$order['status']}}</td> --}}
+                        <td>
+                            <form action="/order/{{$order['id']}}/status" method="POST">
+                                @csrf
+                                @method('PUT') <!-- Because we are updating -->
+                                
+                                <select name="status" onchange="this.form.submit()">
+                                    <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                    <option value="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                                </select>
+                            </form>
+                        </td>
                         {{-- <td>{{$order['delivery_date']}}</td> --}}
                         <td>
                             <a href="/order/{{$order['id']}}" type="button" class="admin-button">Details</a>

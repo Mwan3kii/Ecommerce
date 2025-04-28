@@ -78,6 +78,7 @@ Route::get('/search', [ProductController::class, 'searchProducts']);
 Route::post('/order', [OrderController::class, 'createOrder']);
 Route::get('/orders', [OrderController::class, 'showOrders']);
 Route::get('/order/{id}', [OrderController::class, 'orderDetails']);
+Route::put('/order/{order}/status', [OrderController::class, 'updateStatus']);
 
 // Contact
 Route::post('/contact', [ContactController::class, 'submitContactForm']);
