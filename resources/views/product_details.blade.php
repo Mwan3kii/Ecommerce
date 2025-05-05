@@ -1,6 +1,7 @@
 <x-pageheader></x-pageheader>
     <section style="height: 90px;"></section>
     <section class="prod-section">
+        
         <div class="main-prod">
             <div class="prod-container">
                 <form action="/update-product/{{$product['id']}}" method="POST" class="prod-form" enctype="multipart/form-data">

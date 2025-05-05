@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="header-top">
@@ -78,4 +79,112 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
+    @if (session('remove_cart_success'))
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('remove_cart_success') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
+    @if(session('order_success'))
+        <script>
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, order!"
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                    title: "Success!",
+                    text: "Your order has been made",
+                    icon: "success"
+                    });
+                }
+            });
+        </script>
+    @endif
+    @if(session('update_success'))
+    <script>
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Save",
+            denyButtonText: `Don't save`
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire("Saved!", "", "update_success");
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
+    </script>
+    @endif
+    @if(session('add_cart_success'))
+    <script>
+        Swal.fire({
+            title: "Success!",
+            text: "{{ session('add_cart_success') }}",
+            icon: "success"
+        });
+    </script>
+    @endif
+    @if (session('delete_success'))
+        <script>
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                    });
+                }
+            });
+        </script>
+    @endif
+    @if (session('clear_cart_success'))
+        <script>
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, clear it!"
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                    title: "Deleted!",
+                    text: "Your cart has been cleared.",
+                    icon: "success"
+                    });
+                }
+            });
+        </script>
+    @endif
 </header>

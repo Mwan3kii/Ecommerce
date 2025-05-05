@@ -26,7 +26,7 @@ class ProductController extends Controller
             'price.numeric' => 'Price must be a number',
             'image.required' => 'Image is required',
             'image.image' => 'Image must be a valid image file',
-            'image.mimes' => 'Image must be a file of type: jpeg, png, jpg, gif',
+            'image.mimes' => 'Image must be a file of type: jpeg, png, jpg, gif, webp',
             'image.max' => 'Image size must not exceed 2MB',
         ]);
 
@@ -89,14 +89,14 @@ class ProductController extends Controller
             'image' => $request->hasFile('image') ? $request->file('image')->store('images', 'public') : null,
         ]);
 
-        return redirect('/single-product/' . $id)->with('success', 'Product updated successfully!');
+        return redirect('/single-product/' . $id)->with('update_success', 'Product updated successfully!');
     }
 
     public function deleteProduct($id)
     {
         $product = Product::where('id', $id)->first();
         $product->delete();
-        return redirect()->back()->with('success', 'Product deleted successfully!');
+        return redirect()->back()->with('delete_success', 'Product deleted successfully!');
     }
 
     public function searchProducts(Request $request)

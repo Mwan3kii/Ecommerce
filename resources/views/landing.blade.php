@@ -2,11 +2,13 @@
     <section style="height: 90px;"></section>
     <section>
         @if(session('success'))
-            <div class="message-popup">
-                <div class="icon">&#10003;</div>
-                <span class="message">Success!</span>
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-            </div>
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
         @endif
         <div>
             <div class="banner-section">
@@ -60,50 +62,50 @@
             <h3 class="deals-title">Deals Of The Day</h3>
             <div class="deals-div">
                 <div class="deals-product">
-                    <img src="images/product.jpg" alt="offers">
-                    <h4>Min. 40% Off on Shoes</h4>
-                </div>
-                <div class="deals-product">
                     <img src="images/p1.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
+                
                 <div class="deals-product">
                     <img src="images/p2.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
                 <div class="deals-product">
-                    <img src="images/p3.jpg" alt="offers">
+                    <img src="images/jewerly.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
                 <div class="deals-product">
-                    <img src="images/p1.jpg" alt="offers">
+                    <img src="images/tops.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
+                
                 <div class="deals-product">
-                    <img src="images/p2.jpg" alt="offers">
+                    <img src="images/lipgloss.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
             </div>
             <h3 class="deals-title mt-5">Best Discounts for You</h3>
             <div class="deals-div">
                 <div class="deals-product">
-                    <img src="images/p3.jpg" alt="offers">
-                    <h4>Min. 40% Off on Shoes</h4>
-                </div>
-                <div class="deals-product">
                     <img src="images/product.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
                 <div class="deals-product">
+                    <img src="images/jacket.webp" alt="offers">
+                    <h4>Min. 40% Off on Shoes</h4>
+                </div>
+                
+                <div class="deals-product">
+                    <img src="images/p3.jpg" alt="offers">
+                    <h4>Min. 40% Off on Shoes</h4>
+                </div>
+                
+                <div class="deals-product">
                     <img src="images/p2.jpg" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
                 <div class="deals-product">
-                    <img src="images/p1.jpg" alt="offers">
-                    <h4>Min. 40% Off on Shoes</h4>
-                </div>
-                <div class="deals-product">
-                    <img src="images/p2.jpg" alt="offers">
+                    <img src="images/dress.webp" alt="offers">
                     <h4>Min. 40% Off on Shoes</h4>
                 </div>
             </div>

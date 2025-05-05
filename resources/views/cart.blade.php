@@ -1,4 +1,5 @@
 <div id="popupCart" style="display: none;">
+
     <div class="cart-section">
         <div class="cart-container">
             <div style="display: flex; justify-content: space-between;">

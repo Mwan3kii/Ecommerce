@@ -54,7 +54,7 @@ class UserController extends Controller
         
         if (Auth::attempt(['email' => $request->loginemail, 'password' => $request->loginpassword])) {
             $request->session()->regenerate();
-            return redirect('/landing-page')->with('success', 'Login successful!');
+            return redirect('/landing-page')->with('success', 'Logged in successfully!');
             
         } else {
             return redirect('/login')->with('error', 'Invalid credentials!');
@@ -65,6 +65,6 @@ class UserController extends Controller
     {
         Auth::logout();
         Session::flush();
-        return redirect('/landing-page')->with('success', 'Logout successful!');
+        return redirect('/landing-page')->with('success', 'Logged out successfully!');
     }
 }

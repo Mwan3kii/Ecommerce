@@ -40,7 +40,7 @@ class CartController extends Controller
         session()->put('total', $total);
 
         session()->put('cart', $cart);
-        return back()->with('success', 'Product added to cart!');
+        return back()->with('add_cart_success', 'Product added to cart!');
     }
 
     public function removeFromCart($id)
@@ -58,12 +58,12 @@ class CartController extends Controller
         }
         session()->put('total', $total);
 
-        return redirect()->back()->with('success', 'Product removed successfully!');
+        return redirect()->back()->with('remove_cart_success', 'Product removed successfully!');
     }
 
     public function clearCart()
     {
         session()->forget('cart');
-        return redirect()->back()->with('success', 'Cart cleared successfully!');
+        return redirect()->back()->with('clear_cart_success', 'Cart cleared successfully!');
     }
 }

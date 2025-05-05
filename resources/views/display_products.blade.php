@@ -11,12 +11,14 @@
     </section>
     <section>
         @include('cart')
-        @if(session('success'))
-            <div class="message-popup">
-                <div class="icon">&#10003;</div>
-                <span class="message">Success!</span>
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-            </div>
+        @if(session('add_cart_success'))
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ session('add_cart_success') }}",
+                icon: "success"
+            });
+        </script>
         @endif
         <div class="products-section">
             <div class="products-div">

@@ -1,13 +1,7 @@
 <x-pageheader></x-pageheader>
 <section style="height: 100px;"></section>
 <section>
-    @if(session('success'))
-            <div class="message-popup">
-                <div class="icon">&#10003;</div>
-                <span class="message">Success!</span>
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-            </div>
-    @endif
+    
     <div style="margin-left: 50px; overflow-y: auto;">
         <table class="table table-bordered admin-table">
             <thead class="table-dark">

@@ -10,13 +10,6 @@
         </div>
     </section>
     <section>
-        @if(session('success'))
-            <div class="message-popup">
-                <div class="icon">&#10003;</div>
-                <span class="message">Success!</span>
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-            </div>
-        @endif
         <div class="checkout-section">
             <h3>Checkout</h3>
             <div style="max-height: 400px; overflow-y: auto;">

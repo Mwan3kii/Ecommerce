@@ -10,13 +10,6 @@
         </div>
     </section>
     <section class="contact-section">
-        @if(session('success'))
-            <div class="message-popup">
-                <div class="icon">&#10003;</div>
-                <span class="message">Success!</span>
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-            </div>
-        @endif
         <div>
             <div class="contact-title">
                 <h3>Get in Touch</h3>

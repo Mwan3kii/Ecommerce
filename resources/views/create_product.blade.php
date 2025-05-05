@@ -10,6 +10,13 @@
         </div>
     </section>
     <section class="prod-section">
+        {{-- @if(session('success'))
+            <div class="message-popup">
+                <div class="icon">&#10003;</div>
+                <span class="message">Success!</span>
+                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        @endif --}}
         <div class="main-prod">
             <div class="prod-container">
                 <form action="/create-product" method="POST" class="prod-form" enctype="multipart/form-data">

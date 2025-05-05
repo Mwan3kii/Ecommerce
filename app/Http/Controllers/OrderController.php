@@ -38,7 +38,7 @@ class OrderController extends Controller
         }
         $order->total = $total;
         $order->save();
-        return redirect()->back()->with('success', 'Order created successfully.');
+        return redirect()->back()->with('order_success', 'Order created successfully.');
     }
 
     public function showOrders()
@@ -55,9 +55,9 @@ class OrderController extends Controller
         return view('order_details', compact('order'));
     }
     
-    public function markPaid(Order $order)
+    public function markPaid(Request $request, Order $order)
     {
-        $order->update(['is_paid' => true]);
+        $order->update(['is_paid' => $request->is_paid]);
         return back()->with('success', 'Order marked as paid successfully.');
     }
 
