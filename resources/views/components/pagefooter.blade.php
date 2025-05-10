@@ -41,17 +41,15 @@
             <div class="headline">
                 <p>© 2024 ShoppyKart. All rights reserved | Designed by Agatha Mwaniki</p>
                 <div class="socials">
-                    <a>
-                        <button class="social-btn">
-                            <span class="fab fa-github"></span>
-                        </button>
+                    <a href="https://github.com/Mwan3kii">
+                        <button class="social-btn"><span class="fab fa-github"></span></button>
                     </a>
-                    <a>
+                    <a href="https://x.com/AgathaMwaniki">
                         <button class="social-btn">
                             <span class="fab fa-twitter"></span>
                         </button>
                     </a>
-                    <a>
+                    <a href="https://www.linkedin.com/in/agatha-mwaniki/">
                         <button class="social-btn">
                             <span class="fab fa-linkedin-in"></span>
                         </button>
