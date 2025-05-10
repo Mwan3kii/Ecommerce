@@ -104,8 +104,10 @@ class ProductController extends Controller
         $search = $request->input('search');
         // $products = Product::where('name', 'LIKE', '%' . $search . '%')->get();
         $products = Product::when($search, function ($query, $search) {
-            $query->where('name', 'like', "%{$search}%");
-        })->paginate(10);
+            $query->where('name', 'like', "%{$search}%")
+            ->orWhere('description', 'like', "%{$search}%");
+        })->paginate(5) // 10 results per page
+        ->appends(['search' => $search]); // keep the search in pagination links
         return view('display_products', ['products' => $products]);
     }
 

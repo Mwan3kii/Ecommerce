@@ -56,6 +56,11 @@
                         <h4>No products found</h4>
                     @endforelse
                 </div>
+                @if(method_exists($products, 'links'))
+                    <div class="pagination">
+                        {{ $products->links() }}
+                    </div>
+                @endif
             </div>
         </div>
     </section>   

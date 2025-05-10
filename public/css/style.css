@@ -1328,3 +1328,31 @@ a {
     padding: 15px 45px;
     border-radius: 4px;
 }
+
+.pagination {
+    font-size: 14px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination p {
+    margin-top: 7px;
+    text-align: center;
+}
+
+.pagination a {
+    color: #d90429;
+}
+
+.pagination svg {
+    width: 20px;
+    height: 20px;
+}
+
+.page-item .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    margin: 0 2px;
+}
