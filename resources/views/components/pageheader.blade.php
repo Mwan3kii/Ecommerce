@@ -88,6 +88,15 @@
             });
         </script>
     @endif
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                title: "Error!",
+                text: "{{ session('error') }}",
+                icon: "error"
+            });
+        </script>
+    @endif
     @if (session('remove_cart_success'))
         <script>
             Swal.fire({

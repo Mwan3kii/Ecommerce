@@ -21,7 +21,12 @@
                         <td><img src="{{ asset('storage/' . $product['image']) }}" class="admin-img"></td>
                         <td>{{$product['name']}}</td>
                         <td>Ksh{{$product['price']}}</td>
-                        <td><input class="cart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text"pattern="[0-9]*" value="1" autocomplete="off"></td>
+                        <td>
+                            <form action="/update-quantity/{{ $product['id'] }}" method="POST" class="cart-form" onchange="this.form.submit()">
+                                @csrf
+                                @method('PUT')
+                                <input class="cart-quantity" data-sbmincart-idx="0" name="quantity" type="text"pattern="[0-9]*" value="{{ $product['quantity'] }}" autocomplete="off"></td>
+                            </form>
                         <td>
                             <div style="display: flex; gap: 10px;">
                                 <a href="/product-detail/{{$product['id']}}" type="button" class="admin-button">Edit</a>

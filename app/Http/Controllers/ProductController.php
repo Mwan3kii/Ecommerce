@@ -108,4 +108,17 @@ class ProductController extends Controller
         })->paginate(10);
         return view('display_products', ['products' => $products]);
     }
+
+    public function updateQuantity(Request $request, $id)
+    {
+        $request->validate([
+            'quantity' => 'required|integer|min:0',
+        ]);
+    
+        $product = Product::findOrFail($id);
+        $product->quantity = $request->input('quantity');
+        $product->save();
+    
+        return redirect()->back()->with('success', 'Quantity updated successfully!');
+    }
 }

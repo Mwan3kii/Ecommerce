@@ -58,7 +58,7 @@ class OrderController extends Controller
     public function markPaid(Request $request, Order $order)
     {
         $order->update(['is_paid' => $request->is_paid]);
-        return back()->with('success', 'Order marked as paid successfully.');
+        return back()->with('success', 'Order marked successfully.');
     }
 
     public function updateStatus(Request $request, Order $order)

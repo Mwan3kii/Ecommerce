@@ -70,6 +70,8 @@ Route::get('/admin-panel', [ProductController::class, 'adminProducts']);
 Route::get('/product-detail/{id}', [ProductController::class, 'showProductDetails']);
 Route::put('/update-product/{id}', [ProductController::class, 'updateProduct']);
 Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct']);
+Route::put('/update-quantity/{id}', [ProductController::class, 'updateQuantity']);
+
 
 Route::get('/search', [ProductController::class, 'searchProducts']);
 
