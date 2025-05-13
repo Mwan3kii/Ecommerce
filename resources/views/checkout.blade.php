@@ -29,7 +29,11 @@
                                 <tr> 
                                     <td><img src="{{ asset('storage/' . $item['image']) }}" class="checkout-img"></td>
                                     <td>{{$item['name']}}</td>
-                                    <td><input class="cart-quantity" name="quantity" type="text" value="1"></td>
+                                    <td><form action="/update-quantity/{{ $id}}" method="POST" class="cart-form" onchange="this.form.submit()">
+                                        @csrf
+                                        @method('PUT')
+                                        <input class="cart-quantity" name="quantity" type="text" value="{{ $item['quantity'] }}"></td>
+                                    </form>
                                     <td>Ksh{{$item['price']}}</td>
                                     <td><a href="/remove-cart/{{$id}}"><button type="button" class="remove-cart">×</button></a></td>
                                 </tr>
